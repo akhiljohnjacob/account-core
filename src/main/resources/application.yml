@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: account-core
+        
+    datasource:
+        # account:
+        #     url: 
+        #     username:
+        #     password:
+        #     driverClassName:
+      url: jdbc:mariadb://localhost:3306
+      username: spring_dev
+      password: spring_dev
+      driverClassName: org.mariadb.jdbc.Driver
