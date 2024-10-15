@@ -28,4 +28,10 @@ public class AccountController {
         return String.format("Welcome %s", app_name + " " + app_nm + " " + app_nm2);
     }
 
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
+        return "Account Core API";
+    }
+
 }

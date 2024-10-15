@@ -11,24 +11,25 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.localtym.account_core.repository", entityManagerFactoryRef = "", transactionManagerRef = "")
+@EnableJpaRepositories(basePackages = {"com.localtym.account_core.repository"}, entityManagerFactoryRef = "", transactionManagerRef = "")
 public class AccountRepositoryConfig {
 
     @Autowired
     private Environment env;
 
-    @Bean(name = "accountDataSource")
-    public DataSource searchDataSource() {
 
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName(env.getProperty("spring.datasource.account.driverClassName"));
-        dataSource.setJdbcUrl(env.getProperty("spring.datasource.account.url"));
-        dataSource.setUsername(env.getProperty("spring.datasource.account.username"));
-        dataSource.setPassword(env.getProperty("spring.datasource.account.password"));
-        
-        
+    @Bean(name = "accountsDataSource")
+    public DataSource getDataSource(){
+
+        HikariDataSource datasource = new HikariDataSource();
+        datasource.setDriverClassName(null);
+        datasource.setJdbcUrl(null);
+        datasource.setUsername(null);
+        datasource.setPassword(null);
 
         return null;
     }
+
+
 
 }
