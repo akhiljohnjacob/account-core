@@ -12,6 +12,21 @@ spring:
             driverClassName: org.mariadb.jdbc.Driver
         
         hikari:
-            connection-init-sql: 
-            maximum-pool-size:
+            connectionInitSql: SELECT 1
+            maximumPoolSize: 10
+            connectionTimeout: 5000
+            idleTimeout: 60000
+            minimumIdle: 5
+            keepaliveTime: 30000 
+            maxLifetime: 0
+            initializationFailTimeout: 0
+            poolName: account-core
+    
+    jpa:
+        hibernate:
+            dialect: org.hibernate.dialect.mySQLDialect
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        database-platform: org.hibernate.dialect.MariaDBDialect
+
 
